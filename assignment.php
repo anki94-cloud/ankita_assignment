@@ -24,7 +24,7 @@ if ($fh = fopen('mytext.txt', 'r')) {
 		}
 	}
 	$json_array = json_encode($size_key);
-	echo "<pre>";print_r( stripcslashes($json_array));echo "</pre>";
+	echo "<pre>";print_r(stripcslashes($json_array));echo "</pre>";
 	
     fclose($fh);
 }
