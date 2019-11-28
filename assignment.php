@@ -1,7 +1,8 @@
 
 
 <?php
-if ($fh = fopen('mytext.txt', 'r')) {
+function Assignment($mytext){
+if ($fh = fopen($mytext, 'r')) {
 	$array= array();
     while (!feof($fh)) {
         $line = fgets($fh);		
@@ -23,12 +24,13 @@ if ($fh = fopen('mytext.txt', 'r')) {
 			$size_key['short-content'][] = $data; ///as key not specified then I assign assuption key 
 		}
 	}
-	$json_array = json_encode($size_key);
-	echo "<pre>";print_r(stripcslashes($json_array));echo "</pre>";
+	
+	$json_array = stripcslashes(json_encode($size_key));
+	
+	echo "<pre>";print_r($json_array);echo "</pre>";
 	
     fclose($fh);
 }
-
-
-
+}
+	Assignment('mytext.txt');
 ?>
